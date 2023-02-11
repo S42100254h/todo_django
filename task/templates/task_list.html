@@ -1,1 +1,15 @@
-{% extends 'base.html' %} {% block content %} {{name}} {% endblock %}
+{% extends 'base.html' %} {% block content %}
+<div class="mt-5">
+  <div class="card mb-2">
+    <div class="card-body">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" />
+        <label class="form-check-label"> タスク </label>
+        <button type="button" class="close float-right">
+          <span>&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

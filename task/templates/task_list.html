@@ -1,9 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-<form>
+<form method="POST">
+  {% csrf_token %}
   <div class="form-group row">
-    <div class="col-9">
-      <input type="text" class="form-control" placeholder="卵を買う" />
-    </div>
+    <div class="col-9">{{ from.title}}</div>
     <div class="col-3">
       <button type="submit" class="btn btn-primary mt-auto">
         タスクを追加

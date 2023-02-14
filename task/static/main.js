@@ -1,6 +1,7 @@
 const App = {
   data() {
     return {
+      task: { title: "" },
       tasks: [],
     };
   },

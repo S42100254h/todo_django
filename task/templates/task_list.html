@@ -35,7 +35,11 @@
           <label class="form-check-label" :class="{'completed': task.completed}"
             >[[ task.title ]]
           </label>
-          <button type="button" class="close float-right">
+          <button
+            type="button"
+            class="close float-right"
+            @click="deleteTask(task)"
+          >
             <span>&times;</span>
           </button>
         </div>

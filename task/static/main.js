@@ -34,7 +34,7 @@ const App = {
             this.task.title = "";
             this.getTasks();
           }
-          if (method == "put") {
+          if (method == "put" || method == "delete") {
             this.getTasks();
           }
         })
@@ -57,6 +57,10 @@ const App = {
     updateTask(task) {
       this.getTasks();
       this.sendRequest(URL, "put", JSON.stringify(task));
+    },
+    deleteTask(task) {
+      this.getTasks();
+      this.sendRequest(URL, "delete", JSON.stringify(task));
     },
   },
   created() {

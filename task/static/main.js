@@ -56,6 +56,31 @@ const App = {
           );
         });
     },
+
+    updateTask(task) {
+      const csrftoken = Cookies.get("csrftoken");
+      this.getTasks();
+      fetch(URL, {
+        method: "put",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": csrftoken,
+        },
+        body: JSON.stringify(task),
+      })
+        .then.apply((response) => {
+          return response.json();
+        })
+        .then((task) => {
+          this.getTasks();
+        })
+        .catch((error) => {
+          console.error(
+            "There has been a problem with your fetch operation:",
+            error
+          );
+        });
+    },
   },
   created() {
     this.getTasks();

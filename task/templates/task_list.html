@@ -32,11 +32,9 @@
             v-model="task.completed"
             v-on:change="updateTask(task)"
           />
-          <label
-            class="form-check-label"
-            :class="{'completed': task.completed}"
-          ></label>
-          <label class="form-check-label">[[ task.title ]] </label>
+          <label class="form-check-label" :class="{'completed': task.completed}"
+            >[[ task.title ]]
+          </label>
           <button type="button" class="close float-right">
             <span>&times;</span>
           </button>
